@@ -18,7 +18,7 @@ const AboutSection = () => {
     description: "Developed deep conviction about AGI's role in humanity's next evolutionary leap",
     icon: Target
   }, {
-    year: "2023+",
+    year: "2025",
     title: "Building Tomorrow",
     description: "Actively working toward responsible AGI development and AI-human collaboration",
     icon: Rocket

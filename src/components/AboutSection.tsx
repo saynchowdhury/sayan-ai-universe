@@ -6,37 +6,37 @@ const AboutSection = () => {
   const timelineItems = [
     {
       year: "2020",
-      title: "Discovery Phase",
-      description: "First encounter with AI and machine learning fundamentals",
+      title: "AI Awakening",
+      description: "First glimpse into the transformative power of artificial intelligence and its potential",
       icon: Brain
     },
     {
       year: "2021",
-      title: "Deep Dive",
-      description: "Immersed in neural networks, computer vision, and NLP",
+      title: "Deep Learning",
+      description: "Immersed in neural networks, AGI research, and the philosophical implications of AI",
       icon: Zap
     },
     {
       year: "2022",
-      title: "Creative Fusion",
-      description: "Combined AI with 3D design and creative technologies",
+      title: "Future Vision",
+      description: "Developed deep conviction about AGI's role in humanity's next evolutionary leap",
       icon: Target
     },
     {
       year: "2023+",
-      title: "Future Vision",
-      description: "Building the foundation for AI-powered entrepreneurship",
+      title: "Building Tomorrow",
+      description: "Actively working toward responsible AGI development and AI-human collaboration",
       icon: Rocket
     }
   ];
 
   const skills = [
-    "Machine Learning & Deep Learning",
+    "AGI Research & Development",
+    "Machine Learning & Neural Networks",
+    "AI Ethics & Safety",
     "Computer Vision & NLP",
-    "3D Design & Blender",
-    "React & Three.js",
-    "Python & TensorFlow",
-    "Creative Problem Solving"
+    "3D Design & Immersive Tech",
+    "Futuristic Product Design"
   ];
 
   return (
@@ -53,10 +53,32 @@ const AboutSection = () => {
             About Me
           </h2>
           <p className="text-xl font-futuristic text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            I'm an AI generalist passionate about bridging the gap between cutting-edge technology 
-            and creative expression. My journey spans from machine learning algorithms to 3D visual 
-            experiences, always with an eye toward building the future.
+            I'm an AI enthusiast and futurist, deeply passionate about Artificial General Intelligence (AGI) 
+            and its transformative potential. I support AI advancement while thinking critically about its 
+            implications for humanity's future, bridging technical innovation with visionary thinking.
           </p>
+        </motion.div>
+
+        {/* Profile Image */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          viewport={{ once: true }}
+          className="flex justify-center mb-12"
+        >
+          <div className="relative">
+            <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-neon-purple/30 hover:border-neon-purple transition-colors duration-300 shadow-neon">
+              <img 
+                src="/lovable-uploads/a8dba3cf-e3fc-445e-a1fa-d046d0e40868.png" 
+                alt="Sayan Chowdhury - AI Enthusiast"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center border-2 border-cosmic-dark">
+              <Brain className="w-6 h-6 text-cosmic-dark" />
+            </div>
+          </div>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -138,11 +160,12 @@ const AboutSection = () => {
               viewport={{ once: true }}
             >
               <Card className="p-6 bg-gradient-to-br from-neon-purple/10 to-electric-blue/10 border-neon-purple/30 backdrop-blur-sm">
-                <h4 className="text-xl font-cyber font-bold text-neon-purple mb-4">My Philosophy</h4>
+                <h4 className="text-xl font-cyber font-bold text-neon-purple mb-4">AI & AGI Philosophy</h4>
                 <p className="text-foreground leading-relaxed font-futuristic">
-                  "The future belongs to those who can seamlessly blend technical mastery with 
-                  creative vision. I believe AI isn't just about algorithms—it's about crafting 
-                  experiences that push the boundaries of what's possible."
+                  "I believe AGI will be humanity's greatest creation—not to replace us, but to amplify 
+                  our potential. My mission is to contribute to AI development that's aligned with human 
+                  values, ensuring we build a future where artificial intelligence serves as humanity's 
+                  most powerful collaborative partner."
                 </p>
               </Card>
             </motion.div>

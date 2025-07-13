@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { Mail, Github, Linkedin, Twitter, Send, Calendar } from 'lucide-react';
+import { Mail, Github, Linkedin, Send, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -44,30 +44,23 @@ const ContactSection = () => {
     {
       name: 'GitHub',
       icon: Github,
-      url: 'https://github.com/sayan',
+      url: 'https://github.com/saynchowdhury',
       color: 'hover:text-neon-purple',
-      description: 'Code repositories and open source projects'
+      description: 'Open source AI projects and innovative code'
     },
     {
       name: 'LinkedIn',
       icon: Linkedin,
-      url: 'https://linkedin.com/in/sayan',
+      url: 'https://www.linkedin.com/in/sayan-chowdhury-b4ba6b35b/',
       color: 'hover:text-electric-blue',
-      description: 'Professional network and career updates'
-    },
-    {
-      name: 'Twitter',
-      icon: Twitter,
-      url: 'https://twitter.com/sayan',
-      color: 'hover:text-neon-cyan',
-      description: 'Thoughts on AI, tech trends, and innovation'
+      description: 'Professional network and AGI insights'
     },
     {
       name: 'Email',
       icon: Mail,
       url: 'mailto:sayan@example.com',
       color: 'hover:text-amber-400',
-      description: 'Direct email for collaborations and inquiries'
+      description: 'Direct email for AI collaborations and ventures'
     }
   ];
 

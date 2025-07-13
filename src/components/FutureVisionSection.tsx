@@ -2,6 +2,7 @@ import { useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Text, OrbitControls } from '@react-three/drei';
 import { motion } from 'framer-motion';
+import ThreeJSErrorBoundary from './ThreeJSErrorBoundary';
 import * as THREE from 'three';
 
 interface VisionNode {
@@ -115,7 +116,6 @@ function VisionNode({ node, isHovered, onHover, onLeave }: {
         color={node.color}
         anchorX="center"
         anchorY="middle"
-        font="/fonts/orbitron-regular.woff"
       >
         {node.title}
       </Text>
@@ -178,9 +178,11 @@ const FutureVisionSection = () => {
             className="h-[500px] relative"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-neon-purple/10 to-electric-blue/10 rounded-lg border border-neon-purple/30 backdrop-blur-sm">
-              <Canvas camera={{ position: [0, 0, 6] }}>
-                <VisionScene />
-              </Canvas>
+              <ThreeJSErrorBoundary>
+                <Canvas camera={{ position: [0, 0, 6] }}>
+                  <VisionScene />
+                </Canvas>
+              </ThreeJSErrorBoundary>
             </div>
             <div className="absolute bottom-4 left-4 text-sm text-muted-foreground font-futuristic">
               Click and drag to explore • Scroll to zoom

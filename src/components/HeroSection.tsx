@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { AIGeometry, ParticleField } from './AIHero3D';
+import ThreeJSErrorBoundary from './ThreeJSErrorBoundary';
 
 const HeroSection = () => {
   const scrollToNext = () => {
@@ -15,17 +16,19 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-cosmic">
       {/* 3D Canvas Background */}
       <div className="absolute inset-0 z-0">
-        <Canvas>
-          <PerspectiveCamera makeDefault position={[0, 0, 8]} />
-          <ambientLight intensity={0.3} />
-          <pointLight position={[10, 10, 10]} intensity={1} color="#a855f7" />
-          <pointLight position={[-10, -10, -10]} intensity={0.5} color="#06b6d4" />
-          
-          <AIGeometry />
-          <ParticleField />
-          
-          <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.5} />
-        </Canvas>
+        <ThreeJSErrorBoundary>
+          <Canvas>
+            <PerspectiveCamera makeDefault position={[0, 0, 8]} />
+            <ambientLight intensity={0.3} />
+            <pointLight position={[10, 10, 10]} intensity={1} color="#a855f7" />
+            <pointLight position={[-10, -10, -10]} intensity={0.5} color="#06b6d4" />
+            
+            <AIGeometry />
+            <ParticleField />
+            
+            <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.5} />
+          </Canvas>
+        </ThreeJSErrorBoundary>
       </div>
 
       {/* Content Overlay */}

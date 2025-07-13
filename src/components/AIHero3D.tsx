@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { Sphere, Box, Torus, MeshDistortMaterial } from '@react-three/drei';
+import { Sphere, Box, Torus } from '@react-three/drei';
 import * as THREE from 'three';
 
 function AIGeometry() {
@@ -31,13 +31,12 @@ function AIGeometry() {
     <group>
       {/* Central AI Brain Sphere */}
       <Sphere ref={sphereRef} position={[0, 0, 0]} args={[1.2]} scale={1}>
-        <MeshDistortMaterial
+        <meshStandardMaterial
           color="#a855f7"
-          attach="material"
-          distort={0.3}
-          speed={2}
           roughness={0.2}
           metalness={0.8}
+          emissive="#a855f7"
+          emissiveIntensity={0.1}
         />
       </Sphere>
 
@@ -67,13 +66,13 @@ function AIGeometry() {
 function ParticleField() {
   const pointsRef = useRef<THREE.Points>(null);
   
-  const particleCount = 200;
+  const particleCount = 100; // Reduced for better performance
   const positions = new Float32Array(particleCount * 3);
   
   for (let i = 0; i < particleCount; i++) {
-    positions[i * 3] = (Math.random() - 0.5) * 20;
-    positions[i * 3 + 1] = (Math.random() - 0.5) * 20;
-    positions[i * 3 + 2] = (Math.random() - 0.5) * 20;
+    positions[i * 3] = (Math.random() - 0.5) * 15;
+    positions[i * 3 + 1] = (Math.random() - 0.5) * 15;
+    positions[i * 3 + 2] = (Math.random() - 0.5) * 15;
   }
 
   useFrame((state) => {
@@ -97,7 +96,7 @@ function ParticleField() {
         size={0.05}
         transparent
         opacity={0.6}
-        sizeAttenuation
+        sizeAttenuation={true}
       />
     </points>
   );
